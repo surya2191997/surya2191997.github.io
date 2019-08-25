@@ -40,10 +40,12 @@ The past couples of week went into implementing the LSTM backward pass for cpu a
 The <code style="color:Red;">LSTMLayerBackward()</code> function is implemented in the <code style="color:Red;">RecurrentPropagation.cxx</code> file specific to each architecture type. For example, the cpu <code style="color:Red;">LSTMLayerBackward()</code> function is inside the file <code style="color:Red;"> tmva/tmva/src/DNN/Architectures/Cpu/RecurrentPropagation.cxx </code>. The forward pass is implemented in the header file itself and there is no function specific to each architecture. 
 
 <p>
-The corresponding tests are implemented within the <code style="color:Red;">/tmva/tmva/test/DNN/LSTM/</code> directory. There are separate(.cxx) files for cpu and ref and they include a common header file which implements the test. 	
-
-		      
+The corresponding tests are implemented within the <code style="color:Red;">/tmva/tmva/test/DNN/LSTM/</code> directory. There are separate(.cxx) files for cpu and ref and they include a common header file which implements the test. 			      
 </p>
+
+<p>
+The equations used for implementing the LSTM backward pass can be found <link href = "https://medium.com/@aidangomez/let-s-do-this-f9b699de31d9">here </link>. The numerical example that I used for verifying the correctness can also be found in the link.
+The test implemented is pretty straightforward: compare the gradients found through backpropagation to the ones found through numerical differentiation.		  
  </td>
         
           </tr>
