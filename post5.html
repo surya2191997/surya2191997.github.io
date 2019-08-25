@@ -1,1 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <!-- Please delete this script if you use this HTML. -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7580334-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-7580334-1');
+  </script>
+  <meta name="viewport" content="width=500">
+  <link href="stylesheet.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+  <title>Surya S Dwivedi</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <p align="center">
+                <name>Post 5</name>
+              </p>
+		<p align="center">
+                <heading>August 10th, 2019</heading>
+              </p>
+              <p>
+In the past week I implemented end-to-end test for LSTM and GRU layers. For this, implemented parse functions for LSTM and GRU layer in <code style="color:Red;">MethodDL.cxx</code> file which creates a layer by parsing its string description.
+I also implemented <code style="color:Red;">AddBasicLSTMLayer()</code> and <code style="color:Red;">AddBasicGRULayer()</code> functions in the <code style="color:Red;">DeepNet.h</code> file which add these layers to a deep-net. 
+                
+</p>
+              
+ <p>
+   For the end-to-end testing a used a dataset called <code style="color:Red;">tmva_class_example.root</code> which was also used for RNN. I implemented end-to-end tests files
+   name <code style="color:Red;">LSTMClassification.C</code> and <code style="color:Red;">GRUClassificatioon.C</code> which are not included in the pull request but may be used as tutorials.
+   In these files I created a deep-net consisting of a LSTM(or GRU) layers followed by a reshape layers and two dense layers.
+   This deep-net was used for classifying events as signal or backgroud. The test was performed for both architecture types(cpu and ref). 
+   The cpu training time was observed to be much less than ref(almost by half).
+              </p>
+          </td>
+        
+          </tr>
+        </table>
+
+</body>
+
+</html>
+
 
