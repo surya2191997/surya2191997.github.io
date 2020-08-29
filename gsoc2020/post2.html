@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <!-- Please delete this script if you use this HTML. -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7580334-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-7580334-1');
+  </script>
+  <meta name="viewport" content="width=500">
+  <link href="stylesheet.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+  <title>Surya S Dwivedi</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <p align="center">
+                <name>Post 2</name>
+              </p>
+		<p align="center">
+                <heading>June 24th, 2019</heading>
+              </p>
+              <p>
+The past couples of week went into implementing the LSTM backward pass for cpu and ref architectures and also the tests for them. The backward pass function - <code style="color:Red;"> LSTMLayerBackward() </code> specific to an architecture is called from inside the <code style="color:Red;">Backward()</code> function in <code style="color:Red;">LSTMLayer.h</code> header file. 
+The <code style="color:Red;">LSTMLayerBackward()</code> function is implemented in the <code style="color:Red;">RecurrentPropagation.cxx</code> file specific to each architecture type. For example, the cpu <code style="color:Red;">LSTMLayerBackward()</code> function is inside the file <code style="color:Red;"> tmva/tmva/src/DNN/Architectures/Cpu/RecurrentPropagation.cxx </code>. The forward pass is implemented in the header file itself and there is no function specific to each architecture. 
+
+<p>
+The corresponding tests are implemented within the <code style="color:Red;">/tmva/tmva/test/DNN/LSTM/</code> directory. There are separate(.cxx) files for cpu and ref and they include a common header file which implements the test. 			      
+</p>
+
+<p>
+The equations used for implementing the LSTM backward pass can be found <a href = "https://medium.com/@aidangomez/let-s-do-this-f9b699de31d9">here </a>. The numerical example that I used for verifying the correctness can also be found in the link.
+The test implemented is pretty straightforward: compare the gradients found through backpropagation to the ones found through numerical differentiation.		  
+		</p> 
+		</td>
+        
+          </tr>
+        </table>
+
+</body>
+
+</html>
+
