@@ -32,13 +32,16 @@
               <p align="center">
                 <name>Post 4</name>
               </p>
-    <p align="center">
-                <heading>August 24th, 2020</heading>
+		<p align="center">
+                <heading>August 1st, 2019</heading>
               </p>
               <p>
-I am finally done with the cpu implementation for CNN3D and MaxPool3D with testing, and I've updated the PR. For forward pass testing, I took a small example and compared the result with manual calculation. For backward pass, I tested by comparing numerical and mathematical differentiation methods, i.e. I perturbed input and observed change in output, and compared that with result calculated using backpropagation. The next step would be doing end-toi-end testing for both layers, using a real dataset, that I hope to complete within GSoC. For cuda implementation, I plan to work on it even after GSoC ends, as discussed with the mentor. 
-    </p> 
-    </td>
+So the past couple of weeks were the most challenging till now. I implemented the GRU layer backward pass and tests for the same. The structure is same as that for LSTM. Oh that relief when all the tests passed !
+The challenge here was mainly in deriving the equations for GRU backward pass correctly. The GRU forward pass equations are a little messier than LSTM equations which makes deriving the backward pass equations quiet tedious. 
+There is also no concise blog post for the same. For this reason I have decided to include here the GRU backward pass equations that I derived :		      
+		      
+</p>
+          </td>
         
           </tr>
         </table>
