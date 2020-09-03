@@ -33,19 +33,10 @@
                 <name>Post 2</name>
               </p>
 		<p align="center">
-                <heading>June 24th, 2019</heading>
+                <heading>June 24th, 2020</heading>
               </p>
               <p>
-The past couples of week went into implementing the LSTM backward pass for cpu and ref architectures and also the tests for them. The backward pass function - <code style="color:Red;"> LSTMLayerBackward() </code> specific to an architecture is called from inside the <code style="color:Red;">Backward()</code> function in <code style="color:Red;">LSTMLayer.h</code> header file. 
-The <code style="color:Red;">LSTMLayerBackward()</code> function is implemented in the <code style="color:Red;">RecurrentPropagation.cxx</code> file specific to each architecture type. For example, the cpu <code style="color:Red;">LSTMLayerBackward()</code> function is inside the file <code style="color:Red;"> tmva/tmva/src/DNN/Architectures/Cpu/RecurrentPropagation.cxx </code>. The forward pass is implemented in the header file itself and there is no function specific to each architecture. 
-
-<p>
-The corresponding tests are implemented within the <code style="color:Red;">/tmva/tmva/test/DNN/LSTM/</code> directory. There are separate(.cxx) files for cpu and ref and they include a common header file which implements the test. 			      
-</p>
-
-<p>
-The equations used for implementing the LSTM backward pass can be found <a href = "https://medium.com/@aidangomez/let-s-do-this-f9b699de31d9">here </a>. The numerical example that I used for verifying the correctness can also be found in the link.
-The test implemented is pretty straightforward: compare the gradients found through backpropagation to the ones found through numerical differentiation.		  
+The past couples of week went into implementing the CNN3D and MaxPool 3D forward pass functions. As far as the abstract view is concerned, for 3D convolution, we basically have 4 input dim, 3 stride values, 3 padding values, and 4 filter dim. The difference between 3D and 2D convolution is that in 3D the filter/kernel can move in all the 3 dimensions. The result of applying a kernel on an inpu  at a specified 3D location is the sum of convolution of kernel with the input map at that location, for all input maps. So, the 4th dimension of the ouput would same as the the number of filters/kernels that we have. For 3D MaxPool layer, we take the max of all values within the krnel. Each input map gives exactly one ouput, which is basically the max value at each kernel location. So for 3D MaxPool, 4th output dimensin is same as the number of input maps. For implementation, input and weights are still 2D matrix, with the number of rows representing number of input maps/number of filters. 
 		</p> 
 		</td>
         

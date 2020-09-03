@@ -30,22 +30,16 @@
           <tr>
             <td width="100%" valign="middle">
               <p align="center">
-                <name>Post 3</name>
+                <name>Post 2</name>
               </p>
 		<p align="center">
-                <heading>July 10th, 2019</heading>
+                <heading>July 24th, 2020</heading>
               </p>
               <p>
-In the past week, I completed the following tasks:
-		    <ul>
-<li>Finalize class structure for the GRU class</li>
-<li>Implement forward pass for the GRU layer</li>
-</ul>
-</p>
- <p>
-The class structure was implemented in a header file named <code style="color:Red;">GRULayer.h</code> that I created in <code style="color:Red;">tmva/tmva/inc/TMVA/DNN/GRU</code> and the design was inspired from the file <code style="color:Red;">RNNLayer.h</code> for the RNN. The cell forward pass was implemented as a method of the class in the header file itself, as is done for the RNN layer.    
-For the forward pass GRU equations I referred <a href = "https://colah.github.io/posts/2015-08-Understanding-LSTMs/">this</a> article.		      
-            </td>
+The past weeks went into implementing the CNN3D and MaxPool3D backward pass functions. This was the most challenging part of the project so far. For both layers, the backward pass functions takes as input the backward_gradients of the next layer(i.e. gradient of loss wrt to next layer input), and computes the gradients wrt to input for the current layer, using chain rule. It also computes the gradients wrt any of the parameters within this layer(weights/biases). When the high-level backward is called for the entire deep-net, it starts from the last layer and calls layer-specific backward pass for each layer. For each layer-specific backward pass function, input is the gradient wrt to input of the next layer, and it return gradients wrt to input of the current layer, which is then passed to the previous layer(as it is the output for the previous layer) and so on till we reach the input. This way we compute the gradient wrt to any of the weights/biases in our network, and then finally do the update step. 
+For CNN_3D we have weights and biases for the kernel. So the gradient is calculated for these as well in addition to the input for the Conv3D layer. For MaxPool3D layer, we have no weights and biases so the gradient is computed only for the input to this layer. A lot of blog posts explain how these gradients can be computed for 2D Conv/MaxPool, mathematically(i.e. using chain rule), and I extended those to 3D by intuition, but sometimes I had to redo the math for 3D when something was less obvious. 
+		</p> 
+		</td>
         
           </tr>
         </table>
