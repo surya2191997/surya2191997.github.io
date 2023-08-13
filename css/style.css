@@ -406,7 +406,7 @@ nav a {
  text-align:center
 }
 #toplevelabout {
- background-image:url('https://ramakrishna.org/img/rkcenter.png')
+ background-image:url('https://haridwar.tourismindia.co.in/images/places-to-visit/header/shantikunj-gayatri-parivar-haridwar-tourism-entry-fee-timings-holidays-reviews-header.jpg')
 }
 #toplevelteachings {
  background-image:url('https://ramakrishna.org/img/crowd.jpeg')
@@ -875,7 +875,7 @@ footer p {
 @media(max-width:600px) {
  #toplevelabout,
  #toplevelhome {
-  background-image:url('https://ramakrishna.org/img/about_m.jpg')
+  background-image:url('https://haridwar.tourismindia.co.in/images/places-to-visit/header/shantikunj-gayatri-parivar-haridwar-tourism-entry-fee-timings-holidays-reviews-header.jpg')
  }
  #toplevelteachings {
   background-image:url('https://ramakrishna.org/img/crowd_m.jpg')
